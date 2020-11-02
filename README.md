@@ -13,6 +13,15 @@ For rough practice there are various sites are available:
 3. [javatpoint](https://www.javatpoint.com/daa-tutorial)
 4. [programiz](https://www.programiz.com/dsa)
 
+**In this project I also include the various algorithms**
+
+* Binary Search
+* Heap
+* Merge Sort
+* Quick Sort
+* Knapsack Problem
+* Job Sequencing
+
 
 
 
