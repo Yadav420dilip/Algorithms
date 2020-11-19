@@ -1,13 +1,19 @@
+"""Huffman Coding is a technique of compressing data to reduce its size without losing any of the details. It was first developed by David Huffman.
+
+Huffman Coding is generally useful to compress the data in which there are frequently occurring characters."""
+
+
 class Node:
+    """Create the tree node"""
     def __init__(self, left=None, right=None):
         self.left = left
         self.right = right
 
     def getleft(self):
-        return '%s' % self.left
+        return self.left
 
     def getright(self):
-        return '%s' % self.right
+        return self.right
 
     def children(self):
         return self.left, self.right
@@ -16,10 +22,11 @@ class Node:
         return '%s %s' % (self.left, self.right)
 
 
-strings = 'BCCABBDDAECCBBAEDDCC'
+strings = 'BCAADDDCCACACAC'
 
 
 def huffman_coding(node, binary_string=''):
+    """Implementing the huffman coding"""
     if type(node) is str:
         return {node: binary_string}
 
@@ -31,6 +38,7 @@ def huffman_coding(node, binary_string=''):
 
 
 def compress_string(code):
+    """Compress the string using huffman code"""
     compress_str = ''
     for string in strings:
         compress_str += code[string]
@@ -38,16 +46,16 @@ def compress_string(code):
 
 
 def decompress_code(nodes, compress_str=None):
+    """Decompreess the code using tree node"""
     node_state = nodes
     original_str = ''
     for i in compress_str:
-        if i is '0':
+        if i == '0':
             node = node_state.getleft()
         else:
             node = node_state.getright()
 
         if type(node) is str:
-            print(node)
             original_str += node
             node_state = nodes
         else:
@@ -56,21 +64,34 @@ def decompress_code(nodes, compress_str=None):
     return original_str
 
 
-nodes = {i: strings.count(i) for i in strings}
-nodes = sorted(nodes.items(), key=lambda item: item[1], reverse=True)
+nodes = {i: strings.count(i) for i in strings}# count the alaphabet iteration
+nodes = sorted(nodes.items(), key=lambda item: item[1], reverse=True) # sort the dictionary on the basis of value in descending order 
 
 while len(nodes) > 1:
-    char1, freq1 = nodes.pop(len(nodes) - 1)
+    char1, freq1 = nodes.pop(len(nodes) - 1) #
     char2, freq2 = nodes.pop(len(nodes) - 1)
     new_node = Node(char2, char1)
     nodes.append((new_node, freq1 + freq2))
     nodes.sort(key=lambda item: item[1], reverse=True)
-print(nodes)
+
+    
 huffman_code = huffman_coding(nodes[0][0])
-print("Char -------> Code")
+
+print("Original String --->",strings)
+print("String size %s * 8 = %s"%(len(strings), len(strings)*8))
+
+print("Character code table")
+print("Char -------> Code ------->  Total")
+code_sum, char_sum = 0, 0
 for char, code in huffman_code.items():
-    print('%4s -------> %4s' % (char, code))
+    code_sum += len(code)
+    char_sum += 1
+    print('%4s -------> %4s -------> %s * %s = %s' % (char, code, (strings.count(char)), len(code), strings.count(char)*len(code)))
 
 compress_str = compress_string(huffman_code)
-print(compress_str)
-print(decompress_code((nodes[0][0]),compress_str))
+print("sum %s*8=%s -------> %s ------->  %s"%(char_sum,(char_sum*8), code_sum, len(compress_str)))
+print("Compressed Size is %s"%((char_sum*8)+code_sum+len(compress_str)))
+print("compress String --->",compress_str)
+
+decompress_str = decompress_code((nodes[0][0]),compress_str)
+print("Decompress String --->",decompress_str)
