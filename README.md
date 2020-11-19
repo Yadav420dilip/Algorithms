@@ -6,7 +6,7 @@
 
 In this part of the algorithms we implement the algorithms in programing using python. Beacuase in now days python is most popular language.
 
-For rough practice there are various sites are available:
+For practice there are various sites are available:
 
 1. [geeksforgeeks](https://www.geeksforgeeks.org/fundamentals-of-algorithms/)
 2. [tutorialspoint](https://www.tutorialspoint.com/data_structures_algorithms/index.htm)
