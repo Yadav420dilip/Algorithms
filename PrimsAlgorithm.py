@@ -35,5 +35,5 @@ for i in range(len(graph)):  # iterating the outer matrix
     if (i, min_index) in check or (min_index, i) in check:  # check for reversible path which previously consider
         continue
     else:
-        check.append((i, min_index))  # append the occurring path
+        check.append((i, min_index))  # append the new path
         print("{} - {} = {}".format(i, min_index, min_val))
