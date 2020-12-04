@@ -25,11 +25,11 @@ class Graph:
     # perform the union of the two node of different parent using disjoint set data structure
     def union(self, parent, x, y):
         if abs(parent[x]) > abs(parent[y]):  # if node x has weight greater than node y then
-            parent[y] = x   # assign the x index as parent of the y node
+            parent[y] = x   # assign the x index to y node as parent
             parent[x] -= 1  # and increment the node x weight negatively to know it is parent node
 
         elif abs(parent[x]) < abs(parent[y]):   # if node y has weight greater than node y then
-            parent[x] = y   # assign the y index as parent of the x node
+            parent[x] = y   # assign the y index to x node as parent
             parent[y] -= 1    # and increment the node y weight negatively to know it is parent node
 
         else:   # if both the condition is false then
