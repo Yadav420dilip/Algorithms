@@ -43,6 +43,8 @@ class Graph:
 
 
 g = Graph(9)
+
+#   graph https://www.geeksforgeeks.org/wp-content/uploads/Fig-11.jpg
 g.graph = [[0, 4, 0, 0, 0, 0, 0, 8, 0],
            [4, 0, 8, 0, 0, 0, 0, 11, 0],
            [0, 8, 0, 7, 0, 4, 0, 0, 2],
