@@ -13,6 +13,20 @@ for d in range(1, n - 1):
                 min_val = c
                 partition[i][j] = k
         cost[i][j] = min_val
-
-print(partition)
 print(cost)
+print(partition)
+
+
+def parens(i, j, partition):
+    if i == j:
+        print("A", i, end="")
+        return
+    print("(", end="")
+    x = partition[i][j]
+    parens(i, x, partition)
+    print("*", end="")
+    parens(x + 1, j, partition)
+    print(")", end="")
+
+
+parens(1, 4, partition)
