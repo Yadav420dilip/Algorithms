@@ -1,4 +1,5 @@
 n = 5
+# A1(3*2) *A2(2*4) *A3(4*2) *A4(2*5)
 dimension = [3, 2, 4, 2, 5]
 cost = [[0 for _ in range(0, n)] for _ in range(0, n)]
 partition = [[0 for _ in range(0, n)] for _ in range(0, n)]
