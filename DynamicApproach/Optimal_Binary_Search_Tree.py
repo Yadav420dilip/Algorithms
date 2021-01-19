@@ -1,5 +1,6 @@
 """In computer science, an optimal binary search tree, sometimes called a weight-balanced binary tree, is a binary
 search tree which provides the smallest possible search time for a given sequence of accesses. """
+"""It is use to determine the tree with minimum height so it provide minimum search time"""
 
 # To understand the concept please watch this video
 # https://www.youtube.com/watch?v=wAy6nDMPYAE&list=PLDN4rrl48XKpZkf03iYFl-O29szjTrs_O&index=57
