@@ -18,8 +18,7 @@ def lcs(string1, string2):
 
             elif string1[i - 1] == string2[
                 j - 1]:  # check the alphabet of the 2 string match or not, in matrix indices are one extra therefore we reduce indices by 1
-                l[i][j] = 1 + l[i - 1][
-                    j - 1]  # if match the condition add diagonal value by 1 and store into the current index
+                l[i][j] = 1 + l[i - 1][j - 1]  # if match the condition add diagonal value by 1 and store into the current index
 
             else:
                 l[i][j] = max(l[i - 1][j],
