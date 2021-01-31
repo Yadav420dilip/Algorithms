@@ -48,7 +48,7 @@ while val != 0:  # continue the loop until you reaches to the zero value
         # if the consecutive value of the same row is  not equal then reduce the column and row  by 1 to go to 1
         # level up
         val = a[l1 - 1][l2 - 1]
-        sequence.insert(0, string2[l2 - 1])
+        sequence.insert(0, string2[l2 - 1])  # insert that value from where index goes up
         l1 -= 1
         l2 -= 1
 print(sequence)
