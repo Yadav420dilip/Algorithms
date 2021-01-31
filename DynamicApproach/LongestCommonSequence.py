@@ -50,4 +50,4 @@ while val != 0:  # continue the loop until you reaches to the zero value
         sequence.insert(0, string2[l2 - 1])  # insert that value from where index goes up
         l1 -= 1
         l2 -= 1
-print(sequence)
+print("Sequence is", "".join(sequence))
